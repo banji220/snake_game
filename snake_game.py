@@ -121,13 +121,13 @@ while True:
     move()
     # Check for head collision with the body segments
     for segment in segments:
-          if segment.distance(head) < 20:
+        # print(segment.distance(head))
+        if segment.distance(head) < 10:
             time.sleep(1)
             head.goto(0, 0)
             head.direction = "stop"
-            for segment in segments:
+            for segmnet in segments:
                 segment.goto(1000, 1000)
-            segments.clear()
-        
+            segment.clear()
     time.sleep(0.03)
 windows.mainloop()
