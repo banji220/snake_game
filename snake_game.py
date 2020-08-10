@@ -136,3 +136,6 @@ while True:
             # segment.clear()
     time.sleep(0.03)
 windows.mainloop()
+
+# Need to find a solution to improve the speed after touching its own body, it takes around 3 or 4 seconds or mor
+#to reset the game, so it could be boring for players.(Need to fix this bug)
