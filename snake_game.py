@@ -34,16 +34,20 @@ segments = []
 
 # Go Functions
 def go_up():
-    head.direction = "Up"
+    if head.direction != "Down":
+        head.direction = "Up"
  
 def go_down():
-    head.direction = "Down"
+    if head.direction != "Up":
+        head.direction = "Down"
 
 def go_left():
-    head.direction = "Left"  
+    if head.direction != "Right":
+        head.direction = "Left"  
 
 def go_right():
-    head.direction = "Right"
+    if head.direction != "Left":
+        head.direction = "Right"
     
     
 # Move-Up Function
@@ -129,5 +133,6 @@ while True:
             for segmnet in segments:
                 segment.goto(1000, 1000)
             segment.clear()
+            # segment.clear()
     time.sleep(0.03)
 windows.mainloop()
