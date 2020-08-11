@@ -104,10 +104,17 @@ while True:
         time.sleep(0.5)
         head.goto(0, 0)
         head.direction = "stop"
+        
         for segment in segments:
             segment.goto(1000, 1000)
+        # Clear the Segment list
         segments.clear()
-    
+
+        # Reset the Score when the snake hit the wall(Border)
+        score = 0
+        pen.clear()
+        pen.write(f"Score: {score}  High Score: {high_score}", align = "center", font = ("Courier", 24, "normal"))
+        
     #Check for conflicting food and head!
     if head.distance(food) < 20:
         # Move the food to a random place
