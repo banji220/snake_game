@@ -112,6 +112,7 @@ while True:
 
         # Reset the Score when the snake hit the wall(Border)
         score = 0
+        #Update the score display
         pen.clear()
         pen.write(f"Score: {score}  High Score: {high_score}", align = "center", font = ("Courier", 24, "normal"))
         
@@ -158,10 +159,16 @@ while True:
             time.sleep(1)
             head.goto(0, 0)
             head.direction = "stop"
+                
             for segmnet in segments:
                 segment.goto(1000, 1000)
+                
             segment.clear()
-            # segment.clear()
+            # Reset the Score when the snake touches its own body
+            score = 0
+            # Update the score display
+            pen.clear()
+            pen.write(f"Score: {score}  High Score: {high_score}", align = "center", font=("Courier", 24, "normal"))
     time.sleep(0.03)
 windows.mainloop()
 
