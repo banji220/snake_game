@@ -3,6 +3,11 @@ import time
 import random
 # Set up the screen
 
+
+score = 0
+high_score = 0
+
+
 windows = turtle.Screen()
 windows.title("Snake Game by Banji")
 windows.bgcolor("Pink")
@@ -119,6 +124,15 @@ while True:
         new_segment.color("grey")
         new_segment.penup()
         segments.append(new_segment)
+        
+        
+        
+        #Increase the score
+        score += 10
+        if score > high_score:
+            high_score = score
+        pen.clear()
+        pen.write(f"Score: {score}  High Score: {high_score}", align="center", font=("Courier", 24, "normal"))
     #Move the end segment first in reverse order
     for item in range(len(segments)-1, 0, -1):
         x = segments[item-1].xcor()
