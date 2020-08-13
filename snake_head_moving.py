@@ -19,12 +19,40 @@ head.penup()
 head.direction = "Up"
 
 
+
+# Go Functions
+def go_up():
+    head.direction = "Up"
+ 
+def go_down():
+    head.direction = "Down"
+
+def go_left():
+    head.direction = "Left"  
+
+def go_right():
+    head.direction = "Right"
+    
 def move():
     # Move Up 
     if head.direction == "Up":
         y = head.ycor()
         head.sety(y + 10)
-
+        
+    # Move Down 
+    if head.direction == "Down":
+        y = head.ycor()
+        head.sety(y - 10)
+    
+    # Move Left 
+    if head.direction == "Left":
+        x = head.xcor()
+        head.setx(x - 10)
+    
+    # Move Right 
+    if head.direction == "Right":
+        x = head.xcor()
+        head.setx(x + 10)
 # Main Game Loop
 while True:
     windows.update()
