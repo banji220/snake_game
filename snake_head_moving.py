@@ -1,5 +1,5 @@
 import turtle
-
+import time
 
 
 # Set up the screen
@@ -30,7 +30,7 @@ while True:
     windows.update()
      
     move()
-
+    time.sleep(0.1)
 windows.mainloop()
 
 
